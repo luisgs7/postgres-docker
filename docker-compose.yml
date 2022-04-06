@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres
+    container_name: postgresql_db
+    hostname: postgresql_db
+    restart: always
+    volumes:
+      - ~/.postgresqlDB/postgresql_db:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=database
+  
+volumes:
+  postgres_data:
